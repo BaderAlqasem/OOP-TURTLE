@@ -5,7 +5,9 @@ screen_width = 600
 screen = turtle.Screen()
 gameScreen = screen.setup(screen_width, screen_height)
 
-screen.bgcolor("red")
+
+
+screen.bgcolor("#34abeb")
 screen.title("Game")
 
 class Player(turtle.Turtle):
@@ -14,9 +16,10 @@ class Player(turtle.Turtle):
     turtle.Turtle.__init__(self)
     self.penup()
     self.shape("turtle")
-    self.color("black")
+    self.color("green")
     self.speed = 0
     
+
   def move(self):
     self.forward(self.speed)
     
@@ -35,11 +38,13 @@ class Player(turtle.Turtle):
 def clearScreen():
     player.clear()
 
+
 player = Player()
 playerSize = 20
 
 
 player.goto(playerSize/2 - screen.window_width()/2, screen.window_height()/2 - playerSize/2)
+player.pencolor("black")
 player.pendown()
 player.showturtle()
 
