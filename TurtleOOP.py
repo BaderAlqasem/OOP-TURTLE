@@ -5,8 +5,6 @@ screen_width = 600
 screen = turtle.Screen()
 gameScreen = screen.setup(screen_width, screen_height)
 
-
-
 screen.bgcolor("red")
 screen.title("Game")
 
@@ -19,7 +17,6 @@ class Player(turtle.Turtle):
     self.color("black")
     self.speed = 0
     
-
   def move(self):
     self.forward(self.speed)
     
@@ -38,13 +35,8 @@ class Player(turtle.Turtle):
 def clearScreen():
     player.clear()
 
-def resetTurtle():
-    player.reset()
-
-
 player = Player()
 playerSize = 20
-
 
 
 player.goto(playerSize/2 - screen.window_width()/2, screen.window_height()/2 - playerSize/2)
@@ -60,17 +52,9 @@ artist.onkey(player.turnRight, "d")
 artist.onkey(player.increaseSpeed, "w")
 artist.onkey(player.decreaseSpeed, "s")
 artist.onkey(clearScreen, "c")
-artist.onkey(resetTurtle, "r")
 
 
 loop = True
 
 while loop == True:
     player.move()
-  
-    if playerSize >= screen_width or playerSize < 0 or playerSize >= screen_height or playerSize < 0:
-        print("OOB")
-        loop = False
-  
-  
-#Add border limitation
